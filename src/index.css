@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    background:
+      radial-gradient(circle at top left, rgba(56, 95, 95, 0.18), transparent 34rem),
+      radial-gradient(circle at 80% 0%, rgba(216, 167, 95, 0.08), transparent 28rem),
+      #0B1418;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-strong rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-background-secondary/80 border border-border/80 rounded-3xl shadow-card;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:border-border-strong hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .stat-card {
+    @apply card p-5 min-h-[118px] transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-warning hover:bg-warning-light text-text-inverse text-sm font-semibold rounded-2xl shadow-glow-amber transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-warning/50 focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-background-tertiary/70 hover:bg-background-tertiary border border-border text-text-primary text-sm font-medium rounded-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-border-strong focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-background-tertiary/70 text-sm font-medium rounded-2xl transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-error/10 hover:bg-error/20 text-error border border-error/20 text-sm font-medium rounded-2xl transition-all duration-200;
+  }
+
+  .input {
+    @apply w-full bg-background-tertiary/70 border border-border text-text-primary placeholder:text-text-muted rounded-2xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600/60 focus:border-brand-600 transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-text-secondary mb-1.5 uppercase tracking-wide;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-2xl text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-background-tertiary/70 transition-all duration-200 cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply text-text-primary bg-background-tertiary/90 shadow-card;
+  }
+
+  .divider {
+    @apply border-t border-border;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-success bg-clip-text text-transparent;
+  }
+
+  .glass {
+    background: rgba(17, 30, 36, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .premium-panel {
+    background: linear-gradient(145deg, rgba(24, 42, 49, 0.9), rgba(17, 30, 36, 0.72));
+    box-shadow: 0 30px 80px -54px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  }
+}
